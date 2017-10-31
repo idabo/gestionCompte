@@ -15,7 +15,7 @@ public class GestionCompteApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx= SpringApplication.run(GestionCompteApplication.class, args);
 		ClientMetier clientMetier=ctx.getBean(ClientMetier.class);
-		clientMetier.addClient(new Client("dabo"));
+/*		clientMetier.addClient(new Client("dabo"));
 		clientMetier.addClient(new Client("sylla"));
 		clientMetier.addClient(new Client("ba"));
 		
@@ -24,7 +24,7 @@ public class GestionCompteApplication {
 		clients.forEach(c->System.out.println(c.getNom()));
 		System.out.println("----------------------");
 		List<Client> clts=clientMetier.clientParMC("%a%");
-		clts.forEach(c->System.out.println(c.getNom()));
+		clts.forEach(c->System.out.println(c.getNom()));*/
 	
 	}
 }
