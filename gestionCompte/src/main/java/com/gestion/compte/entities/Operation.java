@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -15,8 +16,9 @@ import javax.persistence.ManyToOne;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_OP",discriminatorType=DiscriminatorType.STRING,length=1)
-public class Operation implements Serializable{
+public abstract class Operation implements Serializable{
 	@Id
+	@GeneratedValue
 	private Long numeroOperation;
 	private Date dateOperation;
 	private double montant;

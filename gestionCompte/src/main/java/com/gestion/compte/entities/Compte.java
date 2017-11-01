@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -78,6 +79,7 @@ public abstract class Compte implements Serializable{
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	@JsonIgnore
 	public Collection<Operation> getOperations() {
 		return operations;
 	}

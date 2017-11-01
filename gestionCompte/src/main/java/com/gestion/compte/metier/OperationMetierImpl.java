@@ -12,6 +12,7 @@ import com.gestion.compte.dao.OperationRepository;
 import com.gestion.compte.entities.Compte;
 import com.gestion.compte.entities.Employe;
 import com.gestion.compte.entities.Operation;
+import com.gestion.compte.entities.Retrait;
 import com.gestion.compte.entities.Versement;
 
 @Service
@@ -46,7 +47,7 @@ public class OperationMetierImpl implements OperationMetier{
 		Compte cp=compteRepository.findOne(code);
 		if(cp.getSolde() < montant) throw new RuntimeException("Solde insufisant");
 		Employe e=employeRepository.findOne(codeEmp);
-		Operation o=new Versement();
+		Operation o=new Retrait();
 		o.setDateOperation(new Date());
 		o.setMontant(montant);
 		o.setCompte(cp);
