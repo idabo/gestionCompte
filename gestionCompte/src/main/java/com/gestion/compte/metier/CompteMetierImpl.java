@@ -1,5 +1,7 @@
 package com.gestion.compte.metier;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class CompteMetierImpl implements CompteMetier{
 	@Override
 	public Compte saveCompte(Compte cp) {
 		// TODO Auto-generated method stub
+		cp.setDateCreation(new Date());
 		return compteRepository.save(cp);
 	}
 

@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Client implements Serializable {
 	@Id
@@ -37,6 +39,7 @@ public class Client implements Serializable {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	@JsonIgnore
 	public Collection<Compte> getComptes() {
 		return comptes;
 	}

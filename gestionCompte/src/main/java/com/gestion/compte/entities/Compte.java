@@ -15,10 +15,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_CPTE",discriminatorType=DiscriminatorType.STRING,length=2)
-public class Compte implements Serializable{
+
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME,include=JsonTypeInfo.As.PROPERTY,property="type")
+@JsonSubTypes({
+	@Type(name="CC",value=CompteCourant.class),
+	@Type(name="CE",value=CompteEpargne.class)
+})
+public abstract class Compte implements Serializable{
 	@Id
 	private String codeCompte;
 	private Date dateCreation;
