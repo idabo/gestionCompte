@@ -53,11 +53,11 @@ public class Employe implements Serializable {
 	public void setNomEmploye(String nomEmploye) {
 		this.nomEmploye = nomEmploye;
 	}
-	@JsonIgnore
+
 	public Employe getEmployeSup() {
 		return employeSup;
 	}
-	@JsonSetter
+
 	public void setEmployeSup(Employe employeSup) {
 		this.employeSup = employeSup;
 	}

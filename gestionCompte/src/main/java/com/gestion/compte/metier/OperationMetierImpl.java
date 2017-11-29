@@ -1,6 +1,7 @@
 package com.gestion.compte.metier;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,6 +65,12 @@ public class OperationMetierImpl implements OperationMetier{
 		retirer(cpte1,montant,codeEmp);
 		verser(cpte2,montant,codeEmp);
 		return true;
+	}
+
+	@Override
+	public List<Operation> listOperations() {
+		// TODO Auto-generated method stub
+		return operationRepository.findAll();
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.gestion.compte.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.gestion.compte.entities.Compte;
 import com.gestion.compte.metier.CompteMetier;
 
 @RestController
+@CrossOrigin("*")
 public class CompteRestService {
 	@Autowired
 	private CompteMetier compteMetier;
